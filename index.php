@@ -1,22 +1,51 @@
 <?php
-/*Cadena de texto que contiene las instruciones html del header para utilizarlo en una intrución php*/
-$header_html_theme = '
-<!DOCTYPE html>
-<html lang=%s>
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package aulageektheme
+ */
+
+
+ /* 
+Las funciones principales para añadir CSS al sistema de dependencias de 
+WordPress son wp_register_style() y wp_enqueue_style(). La primera 
+registra el archivo de la hoja de estilos, la segunda lo pone en cola para ser añadido.
+
+***********************************************************************************
+
+Añadir JavaScript en un theme de WordPress es prácticamente igual que añadir CSS. 
+Se utilizan funciones análogas, wp_register_script() y wp_enqueue_script(), y se 
+utilizan en los mismos actions.
 <head>
     <meta charset=%s>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href=%s/css/materialize.css  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href=%s  media="screen,projection"/>
     <title>%s</title>
     
 </head>
-';
-/* Prinf que imprime la variable que guarda el string del header con sus respectivos datos extraidos por wordpress */
-printf($header_html_theme,get_bloginfo(language),get_bloginfo(charset),get_bloginfo(name));
+*/
+?>
 
-$nav_html_theme = '
+
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<?php wp_head(); ?>
+</head>
 
 <body>
     <!-- Estructura menu Navbar  -->
@@ -67,12 +96,6 @@ $nav_html_theme = '
     <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
   </ul>
 
-
-';
-
-printf($nav_html_theme);
-
-$body_html_theme = '
 <div>
   
 
@@ -99,28 +122,16 @@ Curabitur egestas dolor nec metus viverra, vitae aliquet neque pharetra. Etiam v
 Ut auctor ante nec dolor pulvinar, a viverra massa viverra. Mauris tempor dolor augue, pretium euismod elit luctus vitae. Duis non diam vitae odio sodales sagittis. Fusce ut condimentum velit. Duis eu nibh turpis. Fusce vitae leo magna. Maecenas consectetur tortor mauris, eu consectetur mi semper non. Quisque pretium est orci, et convallis lectus posuere quis. Pellentesque rutrum vulputate rhoncus. Morbi feugiat malesuada vulputate. Aliquam erat volutpat. Vivamus vulputate, odio vel iaculis laoreet, nunc velit sagittis nulla, et consequat nisi sem et turpis. Etiam a orci sed lacus consequat iaculis feugiat sed urna. Duis et eros a nulla lacinia consectetur sit amet non tortor. 
   </div> 
 
+
+
+  <footer>
+
+</footer>
+<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+<?php wp_footer(); ?>
+
   </body>
-
-';  
-
-printf($body_html_theme);
-
-
-$footer_html_theme = ' 
-
-<!--JavaScript at end of body for optimized loading-->
-
-
-
-</html>
-
-';  
-
-printf($footer_html_theme);
-
-?>               
-
-    
-
-
-
+</html> 
