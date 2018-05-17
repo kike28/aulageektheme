@@ -49,6 +49,8 @@ utilizan en los mismos actions.
 
 <body>
     <!-- Estructura menu Navbar  -->
+
+    <div class="navbar-fixed">
     <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">Logo</a>
@@ -64,7 +66,7 @@ utilizan en los mismos actions.
       </ul>
     </div>
   </nav>
-
+  </div>
   <!-- Estructura submenu del Menu del Nav -->
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!">one</a></li>
