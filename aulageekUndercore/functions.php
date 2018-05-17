@@ -80,7 +80,7 @@ if ( ! function_exists( 'aulageek_setup' ) ) :
 			'flex-height' => true,
 		) );
 	}//333333333333333333333333333333333333333333
-endif;////////////////0000000000000000000000000000000000000
+endif;////////////////fin del condicional
 add_action( 'after_setup_theme', 'aulageek_setup' );
 
 /**
